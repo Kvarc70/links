@@ -20,6 +20,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { min-height: 100%; }
+    html { background: var(--bg-2); }
     body {
       font-family: "Manrope", system-ui, -apple-system, sans-serif;
       color: var(--text);
@@ -104,6 +105,69 @@
       box-shadow: 0 10px 24px rgba(31, 35, 48, 0.12);
     }
     .links a:active { transform: translateY(-1px); }
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .facts span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #e9f7ec;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .facts svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .services {
+      width: 100%;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(31, 35, 48, 0.06);
+      text-align: left;
+    }
+    .services h2 {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .services ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .services li { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 600; }
+    .services .ic {
+      flex: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: #e9f7ec;
+      color: var(--accent);
+    }
+    .services .ic svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .links a.primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding-left: 12px;
+      padding-right: 12px;
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(47, 143, 85, 0.35);
+    }
+    .links a.primary:hover,
+    .links a.primary:focus-visible { background: #267a48; box-shadow: 0 12px 28px rgba(47, 143, 85, 0.45); }
+    .links a.primary svg { width: 22px; height: 22px; fill: currentColor; }
     a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
     .socials {
       display: flex;
@@ -194,14 +258,26 @@
 
     <!-- 3. Описание -->
     <p class="bio">Профессиональный трейдер, инвестиции в цифровые активы. Консультации в области криптоэкономики и VPN.</p>
+    <div class="facts">
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 9 12 4 2 9l10 5 10-5Z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg>Диплом трейдера</span>
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>5 лет на цифровом рынке</span>
+    </div>
     </div>
 
-    <!-- 4. Кнопки-ссылки: меняйте текст и адрес в href -->
+    <!-- Чем помогаю -->
+    <section class="services">
+      <h2>Чем могу помочь</h2>
+      <ul>
+        <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>Трейдинг и инвестиции в цифровые активы</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 8h4a2 2 0 0 1 0 4h-4m0 0h4.5a2 2 0 0 1 0 4H9.5V8m1.5-2v2m0 8v2"/></svg></span>Консультации по криптоэкономике</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z"/><path d="M9 12l2 2 4-4"/></svg></span>Настройка и подбор VPN</li>
+      </ul>
+    </section>
+
+    <!-- 4. Кнопки-ссылки. Новую кнопку добавить так:
+         <li><a href="https://адрес" target="_blank" rel="noopener">Название</a></li> -->
     <ul class="links">
-      <li><a href="https://example.com" target="_blank" rel="noopener">Мой сайт</a></li>
-      <li><a href="https://example.com" target="_blank" rel="noopener">Портфолио</a></li>
-      <li><a href="https://example.com" target="_blank" rel="noopener">Блог</a></li>
-      <li><a href="https://example.com" target="_blank" rel="noopener">Записаться на консультацию</a></li>
+      <li><a class="primary" href="https://t.me/Kvarctemp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.94 4.3a1.3 1.3 0 0 0-1.33-.2L2.9 11.03c-.8.31-.78 1.46.03 1.73l4.46 1.5 1.72 5.4c.22.68 1.08.88 1.58.37l2.5-2.56 4.44 3.27c.6.44 1.45.11 1.6-.62L22.4 5.55a1.3 1.3 0 0 0-.46-1.25ZM9.8 14.5l-.47 3.3-1.1-3.73 9.8-6.4-8.23 6.83Z"/></svg>Записаться на консультацию</a></li>
     </ul>
 
     <!-- 5. Соцсети -->
