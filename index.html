@@ -70,7 +70,9 @@
       width: 148px;
       height: 180px;
       border-radius: 50%;
-      background: var(--card);
+      background:
+        radial-gradient(circle at 50% 38%, rgba(245, 196, 81, 0.28), transparent 60%),
+        linear-gradient(180deg, #243052 0%, #111728 100%);
       display: grid;
       place-items: center;
       position: relative;
@@ -255,10 +257,10 @@
   </div>
 
   <main>
-    <!-- 1. Фото (файл avatar.jpg рядом со страницей) -->
+    <!-- 1. Фото (avatar.png — фото без фона; оригинал в avatar.jpg) -->
     <div class="avatar-ring reveal">
       <div class="avatar">
-        <img src="avatar.jpg" alt="Вадим Шульгин" onerror="this.remove()">
+        <img src="avatar.png" alt="Вадим Шульгин" onerror="this.remove()">
         <span aria-hidden="true">ВШ</span>
       </div>
     </div>
